@@ -1,0 +1,120 @@
+name: Bug report
+description: Report a reproducible problem with DeskOS.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Search existing issues first. If the same problem is already reported, add your setup there.
+        This issue and its attachments are public. Remove passwords, API keys, verification or promo codes,
+        account details, private files, and personal messages. Screenshots are optional; redact them before sharing.
+
+  - type: input
+    id: device
+    attributes:
+      label: Device model
+      placeholder: "For example: iPhone 16 Pro or iPad Air (M3)"
+    validations:
+      required: true
+
+  - type: input
+    id: os-version
+    attributes:
+      label: iOS or iPadOS version
+      description: Enter the exact version, including beta status if applicable.
+      placeholder: "For example: iOS 27.0"
+    validations:
+      required: true
+
+  - type: input
+    id: app-version
+    attributes:
+      label: DeskOS version and build
+      description: Give the version number and build if available. If the build is unavailable, say so; avoid "latest" or "newest."
+      placeholder: "For example: 1.1.2; build unknown"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install-source
+    attributes:
+      label: Installation source
+      options:
+        - App Store
+        - TestFlight
+        - Other
+        - Unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the affected DeskOS tool and the order in which you connect hardware and open the app.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Describe what happened and any exact error or status text.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: display-connection
+    attributes:
+      label: Display connection
+      description: Choose the connection used when the problem occurred. These choices do not imply verified compatibility.
+      options:
+        - No external display / not relevant
+        - Direct USB-C to display
+        - Wired HDMI adapter or hub
+        - AirPlay / system Screen Mirroring
+        - Other (describe below)
+        - Unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: hardware-and-screens
+    attributes:
+      label: Display and input details
+      description: |
+        For display problems, list the display/receiver, adapter/hub and cable models if known.
+        Describe each screen separately: workspace, mirrored phone, blank screen, or other result.
+        If "Desktop Preview" appears, say on which screen and what phone controls are visible.
+        For input problems, include mouse/keyboard models, Bluetooth/USB connection, affected tool,
+        and relevant accessibility settings such as AssistiveTouch. Say "unknown" where needed.
+    validations:
+      required: false
+
+  - type: textarea
+    id: frequency
+    attributes:
+      label: Frequency and checks already tried
+      description: Does it happen every time? Describe any checks or workarounds and their results.
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or short recording
+      description: Optional. For display problems, show both screens if possible. Redact personal information before uploading.
+    validations:
+      required: false
